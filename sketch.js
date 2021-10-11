@@ -6,7 +6,7 @@ function setup() {
   angleMode(DEGREES);
 }
 let seed = 0;
-let increment = 0.005;
+let increment = 0.01;
 let c1 = true;
 
 function draw() {
@@ -38,8 +38,8 @@ function draw() {
     background(color2);
   }
 
-  for (let x = 50; x < width - 50; x += 20) {
-    for (let y = 50; y < height - 50; y += 20) {
+  for (let x = width / 20; x < width - width / 20 + 20; x += 20) {
+    for (let y = height / 20; y < height - height / 20 + 20; y += 20) {
       if (c1 === true) {
         fill(color3);
         // background(color4);
@@ -50,7 +50,7 @@ function draw() {
 
       push();
       noStroke();
-      rect(x, y, 9, 9, 2);
+      rect(x, y, 5, 5);
       pop();
     }
   }

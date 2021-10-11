@@ -1,9 +1,12 @@
-function preload() {}
+function preload() {
+  // put preload code here
+}
 
 function setup() {
   createCanvas(windowWidth, windowHeight);
-  angleMode(DEGREES);
+  // put setup code here
 }
+<<<<<<< HEAD
 let seed = 0;
 let increment = 0.005;
 let c1 = true;
@@ -102,4 +105,10 @@ function mouseClicked() {
 
 function windowResized() {
   resizeCanvas(windowWidth, windowHeight);
+=======
+
+function draw() {
+  // put drawing code here
+  background("red");
+>>>>>>> parent of d0c727e (Prova1)
 }

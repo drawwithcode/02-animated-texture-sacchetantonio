@@ -2,37 +2,44 @@ function preload() {}
 
 function setup() {
   createCanvas(windowWidth, windowHeight);
-
+  rectMode(CENTER);
   angleMode(DEGREES);
 }
-let seed = 0;
-let increment = 0.01;
+let seed1 = 0;
+let increment1 = 0.01;
+let seed2 = 0;
+let increment2 = 0.05;
 let c1 = true;
 
 function draw() {
   noStroke;
-  seed += increment;
+  seed1 += increment1;
+  seed2 += increment2;
   let color1 = color(
-    noise(seed) * 255,
-    noise(seed + 20) * 255,
-    noise(seed + 40) * 255,
-    noise(seed + 60) * 255
+    noise(seed1) * 255,
+    noise(seed1 + 20) * 255,
+    noise(seed1 + 40) * 255,
+    noise(seed1 + 60) * 255
   );
   let color2 = color(
-    noise(seed + 60) * 255,
-    noise(seed + 80) * 255,
-    noise(seed + 100) * 255
+    noise(seed1 + 60) * 255,
+    noise(seed1 + 80) * 255,
+    noise(seed1 + 100) * 255
   );
   let color3 = color(
-    noise(seed + 120) * 255,
-    noise(seed + 140) * 255,
-    noise(seed + 160) * 255
+    noise(seed1 + 120) * 255,
+    noise(seed1 + 140) * 255,
+    noise(seed1 + 160) * 255
   );
   let color4 = color(
-    noise(seed + 180) * 255,
-    noise(seed + 200) * 255,
-    noise(seed + 220) * 255
+    noise(seed1 + 180) * 255,
+    noise(seed1 + 200) * 255,
+    noise(seed1 + 220) * 255
   );
+
+  let d = noise(seed2);
+  let mD = map(d, 0, 1, 1, 20);
+
   if (c1 === true) {
     background(color4);
   } else {
@@ -51,7 +58,7 @@ function draw() {
 
       push();
       noStroke();
-      rect(x, y, 5, 5);
+      rect(x, y, mD);
       pop();
     }
   }

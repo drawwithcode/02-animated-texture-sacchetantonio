@@ -10,6 +10,7 @@ let increment = 0.01;
 let c1 = true;
 
 function draw() {
+  noStroke;
   seed += increment;
   let color1 = color(
     noise(seed) * 255,
@@ -38,8 +39,8 @@ function draw() {
     background(color2);
   }
 
-  for (let x = width / 20; x < width - width / 20 + 20; x += 20) {
-    for (let y = height / 20; y < height - height / 20 + 20; y += 20) {
+  for (let x = width / 20; x < width - width / 20; x += 20) {
+    for (let y = height / 20; y < height - height / 20; y += 20) {
       if (c1 === true) {
         fill(color3);
         // background(color4);
@@ -54,8 +55,20 @@ function draw() {
       pop();
     }
   }
+  push();
+  stroke(color("rgba(255, 255, 255, 0.5)"));
+  rectMode(CENTER);
+  textAlign(CENTER, CENTER);
+  fill(color("rgba(255, 255, 255, 0.3)"));
+  rect(width / 2, height - height / 6, 250, 40);
+  fill(color("rgba(255, 255, 255, 1)"));
+  textSize(12);
+  text("PRESS KEY TO CHANGE COLOR", width / 2, height - height / 6);
+
+  pop();
 }
-function mouseClicked() {
+
+function keyPressed() {
   if (c1 === true) {
     c1 = false;
   } else {
